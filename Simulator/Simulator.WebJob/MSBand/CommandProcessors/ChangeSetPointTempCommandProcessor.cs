@@ -3,18 +3,18 @@ using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.DeviceSchema;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Helpers;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Devices;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Devices;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.CommandProcessors;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.CommandProcessors
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.CommandProcessors
 {
     /// <summary>
     /// Command processor to handle the change in the temperature range
     /// </summary>
     public class ChangeSetPointTempCommandProcessor : CommandProcessor
     {
-        private const string CHANGE_SET_POINT_TEMP = "ChangeSetPointTemp";
+        private const string CHANGE_SET_POINT_HEARTRATE = "ChangeSetPointHeartRate";
 
         public ChangeSetPointTempCommandProcessor(MSBandDevice device)
             : base(device)
@@ -24,7 +24,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
         public async override Task<CommandProcessingResult> HandleCommandAsync(DeserializableCommand deserializableCommand)
         {
-            if (deserializableCommand.CommandName == CHANGE_SET_POINT_TEMP)
+            if (deserializableCommand.CommandName == CHANGE_SET_POINT_HEARTRATE)
             {
                 var command = deserializableCommand.Command;
 
@@ -38,16 +38,16 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
                         {
                             dynamic setPointTempDynamic = ReflectionHelper.GetNamedPropertyValue(
                                 parameters,
-                                "SetPointTemp",
+                                "SetPointHeartRate",
                                 usesCaseSensitivePropertyNameMatch: true,
                                 exceptionThrownIfNoMatch: true);
 
                             if (setPointTempDynamic != null)
                             {
-                                double setPointTemp;
-                                if (Double.TryParse(setPointTempDynamic.ToString(), out setPointTemp))
+                                double setPointHeartRate;
+                                if (Double.TryParse(setPointTempDynamic.ToString(), out setPointHeartRate))
                                 {
-                                    device.ChangeSetPointTemp(setPointTemp);
+                                    device.ChangeSetPointHeartRate(setPointHeartRate);
 
                                     return CommandProcessingResult.Success;
                                 }

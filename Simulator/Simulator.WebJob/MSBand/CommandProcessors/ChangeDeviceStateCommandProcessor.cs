@@ -1,22 +1,22 @@
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.DeviceSchema;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Helpers;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Devices;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Devices;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.CommandProcessors;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.CommandProcessors
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.CommandProcessors
 {
     /// <summary>
-    /// Command processor to handle the change in the temperature range
+    /// Command processor to handle the change in device state.
+    /// Currently this just changes the DeviceState string on the device.
     /// </summary>
-    public class ChangeSetPointTempCommandProcessor : CommandProcessor
+    public class ChangeDeviceStateCommandProcessor : CommandProcessor
     {
-        private const string CHANGE_SET_POINT_TEMP = "ChangeSetPointTemp";
+        private const string CHANGE_DEVICE_STATE = "ChangeDeviceState";
 
-        public ChangeSetPointTempCommandProcessor(MSBandDevice device)
+        public ChangeDeviceStateCommandProcessor(MSBandDevice device)
             : base(device)
         {
 
@@ -24,7 +24,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
         public async override Task<CommandProcessingResult> HandleCommandAsync(DeserializableCommand deserializableCommand)
         {
-            if (deserializableCommand.CommandName == CHANGE_SET_POINT_TEMP)
+            if (deserializableCommand.CommandName == CHANGE_DEVICE_STATE)
             {
                 var command = deserializableCommand.Command;
 
@@ -36,30 +36,21 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
                         dynamic parameters = WireCommandSchemaHelper.GetParameters(command);
                         if (parameters != null)
                         {
-                            dynamic setPointTempDynamic = ReflectionHelper.GetNamedPropertyValue(
+                            dynamic deviceState = ReflectionHelper.GetNamedPropertyValue(
                                 parameters,
-                                "SetPointTemp",
+                                "DeviceState",
                                 usesCaseSensitivePropertyNameMatch: true,
                                 exceptionThrownIfNoMatch: true);
 
-                            if (setPointTempDynamic != null)
+                            if (deviceState != null)
                             {
-                                double setPointTemp;
-                                if (Double.TryParse(setPointTempDynamic.ToString(), out setPointTemp))
-                                {
-                                    device.ChangeSetPointTemp(setPointTemp);
+                                device.ChangeDeviceState(deviceState.ToString());
 
-                                    return CommandProcessingResult.Success;
-                                }
-                                else
-                                {
-                                    // SetPointTemp cannot be parsed as a double.
-                                    return CommandProcessingResult.CannotComplete;
-                                }
+                                return CommandProcessingResult.Success;
                             }
                             else
                             {
-                                // setPointTempDynamic is a null reference.
+                                // DeviceState is a null reference.
                                 return CommandProcessingResult.CannotComplete;
                             }
                         }

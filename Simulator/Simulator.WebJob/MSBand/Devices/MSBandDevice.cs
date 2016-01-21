@@ -1,13 +1,13 @@
 ﻿using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Configurations;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.CommandProcessors;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Telemetry;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.CommandProcessors;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Telemetry;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.CommandProcessors;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Devices;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Logging;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Telemetry.Factory;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport.Factory;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Devices
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Devices
 {
     /// <summary>
     /// Implementation of a specific device type that extends the BaseDevice functionality
@@ -56,11 +56,11 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             Logger.LogInfo("Device {0}: Telemetry has stopped", DeviceID);
         }
 
-        public void ChangeSetPointTemp(double setPointTemp)
+        public void ChangeSetPointHeartRate(double setPointTemp)
         {
             var remoteMonitorTelemetry = (RemoteMonitorTelemetry)_telemetryController;
             remoteMonitorTelemetry.ChangeSetPointTemperature(setPointTemp);
-            Logger.LogInfo("Device {0} temperature changed to {1}", DeviceID, setPointTemp);
+            Logger.LogInfo("Device {0} Heart Rate changed to {1}", DeviceID, setPointTemp);
         }
 
         public async void ChangeDeviceState(string deviceState)

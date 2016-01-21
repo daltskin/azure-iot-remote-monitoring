@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
     {
         private const string CHANGE_DEVICE_STATE = "ChangeDeviceState";
 
-        public ChangeDeviceStateCommandProcessor(CoolerDevice device)
+        public ChangeDeviceStateCommandProcessor(MSBandDevice device)
             : base(device)
         {
 
@@ -30,7 +30,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
                 try
                 {
-                    var device = Device as CoolerDevice;
+                    var device = Device as MSBandDevice;
                     if (device != null)
                     {
                         dynamic parameters = WireCommandSchemaHelper.GetParameters(command);
