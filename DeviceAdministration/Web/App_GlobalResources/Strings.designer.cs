@@ -1835,7 +1835,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Azure IoT Suite.
+        ///   Looks up a localized string similar to Microsoft Azure IoT Suite by JD.
         /// </summary>
         public static string MicrosoftAzureIoTSuite {
             get {
