@@ -18,10 +18,10 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
         private const bool IS_SIMULATED_DEVICE = true;
 
         private static List<string> DefaultDeviceNames = new List<string>{
-            "SampleDevice001", 
-            "SampleDevice002", 
-            "SampleDevice003", 
-            "SampleDevice004"
+            "Band1", 
+            "Band2", 
+            "Band3", 
+            "Band4"
         };
 
         private class Location
@@ -38,10 +38,16 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
         }
 
         private static List<Location> _possibleDeviceLocations = new List<Location>{
-            new Location(47.659159, -122.141515),  // Microsoft Red West Campus, Building A
-            new Location(47.593307, -122.332165),  // 800 Occidental Ave S, Seattle, WA 98134
-            new Location(47.617025, -122.191285),  // 11111 NE 8th St, Bellevue, WA 98004
-            new Location(47.583582, -122.130622)  // 3003 160th Ave SE Bellevue, WA 98008
+            //new Location(47.659159, -122.141515),  // Microsoft Red West Campus, Building A
+            //new Location(47.593307, -122.332165),  // 800 Occidental Ave S, Seattle, WA 98134
+            //new Location(47.617025, -122.191285),  // 11111 NE 8th St, Bellevue, WA 98004
+            //new Location(47.583582, -122.130622)  // 3003 160th Ave SE Bellevue, WA 98008
+
+            new Location(51.473042, -0.457198),  // LK Bennet LHR
+            new Location(51.471547, -0.452796),  // LHR Terminals 1-2-3 Underground Stations
+            new Location(51.469749, -0.449721),  // Selfridges LHR
+            new Location(51.470377, -0.458475)  // Tiffany & co
+
         };
 
         public static dynamic GetSampleSimulatedDevice(string deviceId, string key)
@@ -120,7 +126,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
             command = CommandSchemaHelper.CreateNewCommand("StopTelemetry");
             CommandSchemaHelper.AddCommandToDevice(device, command);
             
-            command = CommandSchemaHelper.CreateNewCommand("ChangeSetPointTemp");
+            command = CommandSchemaHelper.CreateNewCommand("ChangeSetPointHeartRate");
             CommandSchemaHelper.DefineNewParameterOnCommand(command, "SetPointTemp", "double");
             CommandSchemaHelper.AddCommandToDevice(device, command);
             
