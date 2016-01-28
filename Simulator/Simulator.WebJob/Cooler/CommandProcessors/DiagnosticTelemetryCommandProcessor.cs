@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
     {
         private const string DIAGNOSTIC_TELEMETRY = "DiagnosticTelemetry";
 
-        public DiagnosticTelemetryCommandProcessor(MSBandDevice device)
+        public DiagnosticTelemetryCommandProcessor(CoolerDevice device)
             : base(device)
         {
 
@@ -30,7 +30,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
                 try
                 {
-                    var device = Device as MSBandDevice;
+                    var device = Device as CoolerDevice;
                     if (device != null)
                     {
                         dynamic parameters = WireCommandSchemaHelper.GetParameters(command);

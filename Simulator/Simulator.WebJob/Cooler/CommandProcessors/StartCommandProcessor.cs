@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
     {
         private const string START_TELEMETRY = "StartTelemetry";
 
-        public StartCommandProcessor(MSBandDevice device)
+        public StartCommandProcessor(CoolerDevice device)
             : base(device)
         {
 
@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
                 try
                 {
-                    var device = Device as MSBandDevice;
+                    var device = Device as CoolerDevice;
                     device.StartTelemetryData();
                     return CommandProcessingResult.Success;
                 }

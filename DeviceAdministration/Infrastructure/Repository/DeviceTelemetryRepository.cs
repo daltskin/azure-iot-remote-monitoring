@@ -267,8 +267,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.ExternalTemperature = number;
                     }
 
-                    if (strdict.TryGetValue("Speed", out str) &&
-                    //if (strdict.TryGetValue("Humidity", out str) &&
+                    if (strdict.TryGetValue("Humidity", out str) &&
                         double.TryParse(
                             str,
                             NumberStyles.Float,
@@ -278,8 +277,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.Humidity = number;
                     }
 
-                    if (strdict.TryGetValue("HeartRate", out str) &&
-                    //if (strdict.TryGetValue("Temperature", out str) &&
+                    if (strdict.TryGetValue("Temperature", out str) &&
                         double.TryParse(
                             str,
                             NumberStyles.Float,
@@ -350,8 +348,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.DeviceId = str;
                     }
 
-                    if (strdict.TryGetValue("averageheartrate", out str) &&
-                    //if (strdict.TryGetValue("averagehumidity", out str) &&
+                    if (strdict.TryGetValue("averagehumidity", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,
@@ -361,8 +358,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.AverageHumidity = number;
                     }
 
-                    if (strdict.TryGetValue("maxheartrate", out str) &&
-                    //if (strdict.TryGetValue("maxhumidity", out str) &&
+                    if (strdict.TryGetValue("maxhumidity", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,
@@ -372,8 +368,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.MaximumHumidity = number;
                     }
 
-                    if (strdict.TryGetValue("minimumheartrate", out str) &&
-                    //if (strdict.TryGetValue("minimumhumidity", out str) &&
+                    if (strdict.TryGetValue("minimumhumidity", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,

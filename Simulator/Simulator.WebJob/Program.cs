@@ -8,8 +8,8 @@ using Autofac;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Configurations;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Repository;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Devices.Factory;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Telemetry.Factory;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Devices.Factory;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Telemetry.Factory;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.DataInitialization;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Devices.Factory;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Logging;
@@ -119,7 +119,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator
             // Dependencies to inject into the Bulk Device Tester
             var logger = new TraceLogger();
             var configProvider = new ConfigurationProvider();
-            var telemetryFactory = new MSBandTelemetryFactory(logger);
+            var telemetryFactory = new CoolerTelemetryFactory(logger);
 
             var serializer = new JsonSerialize();
             var transportFactory = new IotHubTransportFactory(serializer, logger, configProvider);
@@ -136,7 +136,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator
                 deviceStorage = new VirtualDeviceTableStorage(configProvider);
             }
 
-            IDeviceFactory deviceFactory = new MSBandDeviceFactory();
+            IDeviceFactory deviceFactory = new CoolerDeviceFactory();
 
             // Start Simulator
             Trace.TraceInformation("Starting Simulator");

@@ -113,21 +113,10 @@
     <Compile Include="BulkDeviceTester.cs" />
     <Compile Include="DataInitialization\DataInitializer.cs" />
     <Compile Include="DataInitialization\IDataInitializer.cs" />
-    <Compile Include="MSBand\CommandProcessors\ChangeDeviceStateCommandProcessor.cs" />
-    <Compile Include="MSBand\CommandProcessors\ChangeSetPointTempCommandProcessor.cs" />
-    <Compile Include="MSBand\CommandProcessors\DiagnosticTelemetryCommandProcessor.cs" />
-    <Compile Include="MSBand\CommandProcessors\StartCommandProcessor.cs" />
-    <Compile Include="MSBand\CommandProcessors\StopCommandProcessor.cs" />
-    <Compile Include="MSBand\Devices\MSBandDevice.cs" />
-    <Compile Include="MSBand\Devices\Factory\MSBandDeviceFactory.cs" />
-    <Compile Include="MSBand\Telemetry\Data\RemoteMonitorTelemetryData.cs" />
-    <Compile Include="MSBand\Telemetry\Factory\CoolerTelemetryFactory.cs" />
-    <Compile Include="MSBand\Telemetry\RemoteMonitorTelemetry.cs" />
-    <Compile Include="MSBand\Telemetry\StartupTelemetry.cs" />
     <Compile Include="SimulatorModule.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="SimulatorCore\Devices\CommandProcessors\CommandProcessor.cs" />
-    <Compile Include="SimulatorCore\Devices\CommandProcessors\PingDeviceProcessor.cs" />
+    <Compile Include="SimulatorCore\CommandProcessors\CommandProcessor.cs" />
+    <Compile Include="SimulatorCore\CommandProcessors\PingDeviceProcessor.cs" />
     <Compile Include="SimulatorCore\Devices\Factory\DeviceFactory.cs" />
     <Compile Include="SimulatorCore\Devices\Factory\IDeviceFactory.cs" />
     <Compile Include="SimulatorCore\Devices\IDevice.cs" />
@@ -138,6 +127,13 @@
     <Compile Include="SimulatorCore\Transport\Factory\ITransportFactory.cs" />
     <Compile Include="DeviceManager.cs" />
     <Compile Include="SimulatorCore\Devices\DeviceBase.cs" />
+    <Compile Include="Cooler\CommandProcessors\ChangeDeviceStateCommandProcessor.cs" />
+    <Compile Include="Cooler\CommandProcessors\ChangeSetPointTempCommandProcessor.cs" />
+    <Compile Include="Cooler\CommandProcessors\DiagnosticTelemetryCommandProcessor.cs" />
+    <Compile Include="Cooler\CommandProcessors\StartCommandProcessor.cs" />
+    <Compile Include="Cooler\CommandProcessors\StopCommandProcessor.cs" />
+    <Compile Include="Cooler\Devices\Factory\CoolerDeviceFactory.cs" />
+    <Compile Include="Cooler\Devices\CoolerDevice.cs" />
     <Compile Include="SimulatorCore\Telemetry\ConcreteTelemetry.cs" />
     <Compile Include="SimulatorCore\Telemetry\ITelemetry.cs" />
     <Compile Include="SimulatorCore\Logging\EmptyLogger.cs" />
@@ -155,6 +151,10 @@
     <Compile Include="SimulatorCore\Transport\EmptyTransport.cs" />
     <Compile Include="SimulatorCore\Transport\ITransport.cs" />
     <Compile Include="SimulatorCore\Transport\IoTHubTransport.cs" />
+    <Compile Include="Cooler\Telemetry\Data\RemoteMonitorTelemetryData.cs" />
+    <Compile Include="Cooler\Telemetry\RemoteMonitorTelemetry.cs" />
+    <Compile Include="Cooler\Telemetry\Factory\CoolerTelemetryFactory.cs" />
+    <Compile Include="Cooler\Telemetry\StartupTelemetry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -163,8 +163,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\PublishProfiles\PassengerMonitoring-jobhost - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\PassengerMonitoring-jobhost - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

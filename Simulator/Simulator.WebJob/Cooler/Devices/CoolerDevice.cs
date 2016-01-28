@@ -12,10 +12,10 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
     /// <summary>
     /// Implementation of a specific device type that extends the BaseDevice functionality
     /// </summary>
-    public class MSBandDevice : DeviceBase
+    public class CoolerDevice : DeviceBase
     {
 
-        public MSBandDevice(ILogger logger, ITransportFactory transportFactory,
+        public CoolerDevice(ILogger logger, ITransportFactory transportFactory,
             ITelemetryFactory telemetryFactory, IConfigurationProvider configurationProvider)
             : base(logger, transportFactory, telemetryFactory, configurationProvider)
         {

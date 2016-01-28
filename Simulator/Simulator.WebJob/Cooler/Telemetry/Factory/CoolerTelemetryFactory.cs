@@ -2,14 +2,14 @@
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Logging;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Telemetry.Factory;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.MSBand.Telemetry.Factory
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Telemetry.Factory
 {
-    public class MSBandTelemetryFactory : ITelemetryFactory
+    public class CoolerTelemetryFactory : ITelemetryFactory
     {
         private readonly ILogger _logger;
 
 
-        public MSBandTelemetryFactory(ILogger logger)
+        public CoolerTelemetryFactory(ILogger logger)
         {
             _logger = logger;
         }
