@@ -27,10 +27,10 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         }
 
         /// <summary>
-        /// Gets or sets the represented telemetry recording's humidity 
+        /// Gets or sets the represented telemetry recording's heartrate 
         /// value.
         /// </summary>
-        public double? Humidity
+        public double? HeartRate
         {
             get;
             set;

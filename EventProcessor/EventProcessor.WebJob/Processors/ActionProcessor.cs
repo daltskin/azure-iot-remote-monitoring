@@ -155,25 +155,25 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.EventProcessor.W
                     }
                 }
 
-                string humidityRuleOutput = eventData.humidityruleoutput;
-                if (!string.IsNullOrWhiteSpace(humidityRuleOutput))
+                string heartrateRuleOutput = eventData.heartrateruleoutput;
+                if (!string.IsNullOrWhiteSpace(heartrateRuleOutput))
                 {
-                    Trace.TraceInformation("ProcessAction: humidity rule triggered!");
-                    double humidityReading = ExtractDouble(eventData.humidityreading);
+                    Trace.TraceInformation("ProcessAction: heartrate rule triggered!");
+                    double heartrateReading = ExtractDouble(eventData.heartratereading);
 
-                    string humidityActionId = await _actionMappingLogic.GetActionIdFromRuleOutputAsync(humidityRuleOutput);
+                    string heartrateActionId = await _actionMappingLogic.GetActionIdFromRuleOutputAsync(heartrateRuleOutput);
 
-                    if (!string.IsNullOrWhiteSpace(humidityActionId))
+                    if (!string.IsNullOrWhiteSpace(heartrateActionId))
                     {
                         await _actionLogic.ExecuteLogicAppAsync(
-                            humidityActionId,
+                            heartrateActionId,
                             deviceId,
-                            "Humidity",
-                            humidityReading);
+                            "HeartRate",
+                            heartrateReading);
                     }
                     else
                     {
-                        Trace.TraceError("ActionProcessor: humidityActionId value is empty for humidityRuleOutput '{0}'", humidityRuleOutput);
+                        Trace.TraceError("ActionProcessor: heartrateActionId value is empty for heartrateRuleOutput '{0}'", heartrateRuleOutput);
                     }
                 }
             }

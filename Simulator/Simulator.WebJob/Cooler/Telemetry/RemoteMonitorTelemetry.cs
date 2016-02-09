@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         private const int PEAK_FREQUENCY_IN_SECONDS = 90;
 
         private SampleDataGenerator _temperatureGenerator;
-        private SampleDataGenerator _humidityGenerator;
+        private SampleDataGenerator _heartrateGenerator;
         private SampleDataGenerator _externalTemperatureGenerator;
 
         public bool ActivateExternalTemperature { get; set; }
@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             int peakFrequencyInTicks = Convert.ToInt32(Math.Ceiling((double)PEAK_FREQUENCY_IN_SECONDS /  REPORT_FREQUENCY_IN_SECONDS));
 
             _temperatureGenerator = new SampleDataGenerator(33, 36, 42, peakFrequencyInTicks);
-            _humidityGenerator = new SampleDataGenerator(20, 50);
+            _heartrateGenerator = new SampleDataGenerator(40, 200);
             _externalTemperatureGenerator = new SampleDataGenerator(-20, 120);
         }
 
@@ -49,9 +49,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
                 {
                     monitorData.DeviceId = _deviceId;
                     monitorData.Temperature = _temperatureGenerator.GetNextValue();
-                    monitorData.Humidity = _humidityGenerator.GetNextValue();
+                    monitorData.HeartRate = _heartrateGenerator.GetNextValue();
                     messageBody = "Temperature: " + Math.Round(monitorData.Temperature, 2)
-                        + " Humidity: " + Math.Round(monitorData.Humidity, 2);
+                        + " HeartRate: " + Math.Round(monitorData.HeartRate, 2);
 
                     if (ActivateExternalTemperature)
                     {

@@ -387,8 +387,8 @@
     <Content Include="Content\styles\blocks\device_view\device_details_block.less" />
     <Content Include="Content\styles\elements\error_reporting.less" />
     <Content Include="Content\styles\blocks\text_copy\text_copy_block.less" />
-    <None Include="Properties\PublishProfiles\PassengerMonitoring - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\PassengerMonitoring - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\passengertracker - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\passengertracker - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-i18n.js" />
     <Content Include="Scripts\jquery-ui-i18n.min.js" />

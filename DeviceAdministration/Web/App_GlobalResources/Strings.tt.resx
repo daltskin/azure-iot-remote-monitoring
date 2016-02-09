@@ -189,7 +189,7 @@
   <data name="AvailablePowerSources" xml:space="preserve">
     <value>[Åväįľäþľę Pőŵęř Ŝőūřčęş !!! !!!]</value>
   </data>
-  <data name="AverageOfDeviceHumidity" xml:space="preserve">
+  <data name="AverageOfDeviceHeartRate" xml:space="preserve">
     <value>[Åvęřäģę őƒ đęvįčę ĥūmįđįŧy !!! !!!]</value>
   </data>
   <data name="AzureDevicesHostname" xml:space="preserve">
@@ -618,7 +618,7 @@
   <data name="HostnameLength" xml:space="preserve">
     <value>[Ħőşŧŉämę čäŉŉőŧ þę ľőŉģęř ŧĥäŉ 1024 čĥäřäčŧęřş !!! !!!]</value>
   </data>
-  <data name="Humidity" xml:space="preserve">
+  <data name="HeartRate" xml:space="preserve">
     <value>[Ħūmįđįŧy !!! !!! !!! !!! !!! !!! !!!]</value>
   </data>
   <data name="ImplicitReadOnlyRole" xml:space="preserve">
@@ -699,7 +699,7 @@
   <data name="MaxLengthProductId" xml:space="preserve">
     <value>[Přőđūčŧ Ĩđ čäŉŉőŧ þę ľőŉģęř ŧĥäŉ 1024 čĥäřäčŧęřş. !!! !!! !!!]</value>
   </data>
-  <data name="MaxOfDevicesHumidity" xml:space="preserve">
+  <data name="MaxOfDevicesHeartRate" xml:space="preserve">
     <value>[Mäχ őƒ đęvįčę ĥūmįđįŧy !!! !!!]</value>
   </data>
   <data name="Metadata" xml:space="preserve">
@@ -711,7 +711,7 @@
   <data name="MicrosoftAzureIoTSuite" xml:space="preserve">
     <value>[Mįčřőşőƒŧ Åžūřę ĨőŦ Ŝūįŧę !!! !!!]</value>
   </data>
-  <data name="MinOfDevicesHumidity" xml:space="preserve">
+  <data name="MinOfDevicesHeartRate" xml:space="preserve">
     <value>[Mįŉ őƒ đęvįčę ĥūmįđįŧy !!! !!!]</value>
   </data>
   <data name="ModelNameMustBeLessThan200Characters" xml:space="preserve">

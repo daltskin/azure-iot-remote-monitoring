@@ -8,9 +8,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
     public class DeviceTelemetrySummaryModel
     {
         /// <summary>
-        /// Gets or sets the covered period's average humidity.
+        /// Gets or sets the covered period's average heartrate.
         /// </summary>
-        public double? AverageHumidity
+        public double? AverageHeartRate
         {
             get;
             set;
@@ -27,18 +27,18 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         }
 
         /// <summary>
-        /// Gets or sets the covered period's maximum humidity.
+        /// Gets or sets the covered period's maximum heartrate.
         /// </summary>
-        public double? MaximumHumidity
+        public double? MaximumHeartRate
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the covered period's minimum humidity.
+        /// Gets or sets the covered period's minimum heartrate.
         /// </summary>
-        public double? MinimumHumidity
+        public double? MinimumHeartRate
         {
             get;
             set;

@@ -3,22 +3,22 @@
     function initTelemetryHistorySummary() {
         'use strict';
 
-        var averageDeviceHumidityContainer;
-        var averageDeviceHumidityControl;
-        var averageDeviceHumidityLabel;
-        var averageHumidityVisual;
-        var lastAvgHumidity;
-        var lastMaxHumidity;
-        var lastMinHumidity;
-        var maxDeviceHumidityContainer;
-        var maxDeviceHumidityControl;
-        var maxDeviceHumidityLabel;
-        var maxHumidityVisual;
+        var averageDeviceHeartRateContainer;
+        var averageDeviceHeartRateControl;
+        var averageDeviceHeartRateLabel;
+        var averageHeartRateVisual;
+        var lastAvgHeartRate;
+        var lastMaxHeartRate;
+        var lastMinHeartRate;
+        var maxDeviceHeartRateContainer;
+        var maxDeviceHeartRateControl;
+        var maxDeviceHeartRateLabel;
+        var maxHeartRateVisual;
         var maxValue;
-        var minDeviceHumidityContainer;
-        var minDeviceHumidityControl;
-        var minDeviceHumidityLabel;
-        var minHumidityVisual;
+        var minDeviceHeartRateContainer;
+        var minDeviceHeartRateControl;
+        var minDeviceHeartRateLabel;
+        var minHeartRateVisual;
         var minValue;
 
         var createDataView = function createDataView(indicatedValue) {
@@ -135,33 +135,33 @@
             maxValue = telemetryHistorySummarySettings.gaugeMaxValue;
             minValue = telemetryHistorySummarySettings.gaugeMinValue;
 
-            averageDeviceHumidityContainer = telemetryHistorySummarySettings.averageDeviceHumidityContainer;
-            averageDeviceHumidityControl = telemetryHistorySummarySettings.averageDeviceHumidityControl;
-            averageDeviceHumidityLabel = telemetryHistorySummarySettings.averageDeviceHumidityLabel;
-            maxDeviceHumidityContainer = telemetryHistorySummarySettings.maxDeviceHumidityContainer;
-            maxDeviceHumidityControl = telemetryHistorySummarySettings.maxDeviceHumidityControl;
-            maxDeviceHumidityLabel = telemetryHistorySummarySettings.maxDeviceHumidityLabel;
-            minDeviceHumidityContainer = telemetryHistorySummarySettings.minDeviceHumidityContainer;
-            minDeviceHumidityControl = telemetryHistorySummarySettings.minDeviceHumidityControl;
-            minDeviceHumidityLabel = telemetryHistorySummarySettings.minDeviceHumidityLabel;
+            averageDeviceHeartRateContainer = telemetryHistorySummarySettings.averageDeviceHeartRateContainer;
+            averageDeviceHeartRateControl = telemetryHistorySummarySettings.averageDeviceHeartRateControl;
+            averageDeviceHeartRateLabel = telemetryHistorySummarySettings.averageDeviceHeartRateLabel;
+            maxDeviceHeartRateContainer = telemetryHistorySummarySettings.maxDeviceHeartRateContainer;
+            maxDeviceHeartRateControl = telemetryHistorySummarySettings.maxDeviceHeartRateControl;
+            maxDeviceHeartRateLabel = telemetryHistorySummarySettings.maxDeviceHeartRateLabel;
+            minDeviceHeartRateContainer = telemetryHistorySummarySettings.minDeviceHeartRateContainer;
+            minDeviceHeartRateControl = telemetryHistorySummarySettings.minDeviceHeartRateControl;
+            minDeviceHeartRateLabel = telemetryHistorySummarySettings.minDeviceHeartRateLabel;
 
-            averageHumidityVisual = createVisual(averageDeviceHumidityControl);
-            maxHumidityVisual = createVisual(maxDeviceHumidityControl);
-            minHumidityVisual = createVisual(minDeviceHumidityControl);
+            averageHeartRateVisual = createVisual(averageDeviceHeartRateControl);
+            maxHeartRateVisual = createVisual(maxDeviceHeartRateControl);
+            minHeartRateVisual = createVisual(minDeviceHeartRateControl);
         };
 
         var redraw = function redraw() {
             var height;
             var width;
 
-            if (minDeviceHumidityControl &&
-                minHumidityVisual &&
-                (lastMinHumidity || (lastMinHumidity === 0))) {
-                height = minDeviceHumidityControl.height();
-                width = minDeviceHumidityControl.width();
+            if (minDeviceHeartRateControl &&
+                minHeartRateVisual &&
+                (lastMinHeartRate || (lastMinHeartRate === 0))) {
+                height = minDeviceHeartRateControl.height();
+                width = minDeviceHeartRateControl.width();
 
-                minHumidityVisual.update({
-                    dataViews: [createDataView(lastMinHumidity)],
+                minHeartRateVisual.update({
+                    dataViews: [createDataView(lastMinHeartRate)],
                     viewport: {
                         height: height,
                         width: width
@@ -170,14 +170,14 @@
                 });
             }
 
-            if (maxDeviceHumidityControl &&
-                maxHumidityVisual &&
-                (lastMaxHumidity || (lastMaxHumidity === 0))) {
-                height = maxDeviceHumidityControl.height();
-                width = maxDeviceHumidityControl.width();
+            if (maxDeviceHeartRateControl &&
+                maxHeartRateVisual &&
+                (lastMaxHeartRate || (lastMaxHeartRate === 0))) {
+                height = maxDeviceHeartRateControl.height();
+                width = maxDeviceHeartRateControl.width();
 
-                maxHumidityVisual.update({
-                    dataViews: [createDataView(lastMaxHumidity)],
+                maxHeartRateVisual.update({
+                    dataViews: [createDataView(lastMaxHeartRate)],
                     viewport: {
                         height: height,
                         width: width
@@ -186,14 +186,14 @@
                 });
             }
 
-            if (averageDeviceHumidityControl &&
-                averageHumidityVisual &&
-                (lastAvgHumidity || (lastAvgHumidity === 0))) {
-                height = averageDeviceHumidityControl.height();
-                width = averageDeviceHumidityControl.width();
+            if (averageDeviceHeartRateControl &&
+                averageHeartRateVisual &&
+                (lastAvgHeartRate || (lastAvgHeartRate === 0))) {
+                height = averageDeviceHeartRateControl.height();
+                width = averageDeviceHeartRateControl.width();
 
-                averageHumidityVisual.update({
-                    dataViews: [createDataView(lastAvgHumidity)],
+                averageHeartRateVisual.update({
+                    dataViews: [createDataView(lastAvgHeartRate)],
                     viewport: {
                         height: height,
                         width: width
@@ -212,49 +212,49 @@
 
                 padding = 0;
 
-                if (averageDeviceHumidityContainer &&
-                    averageDeviceHumidityLabel &&
-                    averageDeviceHumidityControl) {
+                if (averageDeviceHeartRateContainer &&
+                    averageDeviceHeartRateLabel &&
+                    averageDeviceHeartRateControl) {
 
                     height =
-                        averageDeviceHumidityContainer.height() -
-                        averageDeviceHumidityLabel.height() -
+                        averageDeviceHeartRateContainer.height() -
+                        averageDeviceHeartRateLabel.height() -
                         padding;
 
-                    width = averageDeviceHumidityContainer.width() - padding;
+                    width = averageDeviceHeartRateContainer.width() - padding;
 
-                    averageDeviceHumidityControl.height(height);
-                    averageDeviceHumidityControl.width(width);
+                    averageDeviceHeartRateControl.height(height);
+                    averageDeviceHeartRateControl.width(width);
                 }
 
-                if (maxDeviceHumidityContainer &&
-                    maxDeviceHumidityLabel &&
-                    maxDeviceHumidityControl) {
+                if (maxDeviceHeartRateContainer &&
+                    maxDeviceHeartRateLabel &&
+                    maxDeviceHeartRateControl) {
 
                     height =
-                        maxDeviceHumidityContainer.height() -
-                        maxDeviceHumidityLabel.height() -
+                        maxDeviceHeartRateContainer.height() -
+                        maxDeviceHeartRateLabel.height() -
                         padding;
 
-                    width = maxDeviceHumidityContainer.width() - padding;
+                    width = maxDeviceHeartRateContainer.width() - padding;
 
-                    maxDeviceHumidityControl.height(height);
-                    maxDeviceHumidityControl.width(width);
+                    maxDeviceHeartRateControl.height(height);
+                    maxDeviceHeartRateControl.width(width);
                 }
 
-                if (minDeviceHumidityContainer &&
-                    minDeviceHumidityLabel &&
-                    minDeviceHumidityControl) {
+                if (minDeviceHeartRateContainer &&
+                    minDeviceHeartRateLabel &&
+                    minDeviceHeartRateControl) {
 
                     height =
-                        minDeviceHumidityContainer.height() -
-                        minDeviceHumidityLabel.height() -
+                        minDeviceHeartRateContainer.height() -
+                        minDeviceHeartRateLabel.height() -
                         padding;
 
-                    width = minDeviceHumidityContainer.width() - padding;
+                    width = minDeviceHeartRateContainer.width() - padding;
 
-                    minDeviceHumidityControl.height(height);
-                    minDeviceHumidityControl.width(width);
+                    minDeviceHeartRateControl.height(height);
+                    minDeviceHeartRateControl.width(width);
                 }
 
                 redraw();
@@ -262,13 +262,13 @@
 
         var updateTelemetryHistorySummaryData =
             function updateTelemetryHistorySummaryData(
-                minHumidity,
-                maxHumidity,
-                avgHumidity) {
+                minHeartRate,
+                maxHeartRate,
+                avgHeartRate) {
 
-                lastAvgHumidity = avgHumidity;
-                lastMaxHumidity = maxHumidity;
-                lastMinHumidity = minHumidity;
+                lastAvgHeartRate = avgHeartRate;
+                lastMaxHeartRate = maxHeartRate;
+                lastMinHeartRate = minHeartRate;
 
                 redraw();
         };

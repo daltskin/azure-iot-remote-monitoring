@@ -267,14 +267,14 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.ExternalTemperature = number;
                     }
 
-                    if (strdict.TryGetValue("Humidity", out str) &&
+                    if (strdict.TryGetValue("HeartRate", out str) &&
                         double.TryParse(
                             str,
                             NumberStyles.Float,
                             CultureInfo.InvariantCulture,
                             out number))
                     {
-                        model.Humidity = number;
+                        model.HeartRate = number;
                     }
 
                     if (strdict.TryGetValue("Temperature", out str) &&
@@ -348,34 +348,34 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         model.DeviceId = str;
                     }
 
-                    if (strdict.TryGetValue("averagehumidity", out str) &&
+                    if (strdict.TryGetValue("averageheartrate", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,
                             CultureInfo.InvariantCulture,
                             out number))
                     {
-                        model.AverageHumidity = number;
+                        model.AverageHeartRate = number;
                     }
 
-                    if (strdict.TryGetValue("maxhumidity", out str) &&
+                    if (strdict.TryGetValue("maxheartrate", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,
                             CultureInfo.InvariantCulture,
                             out number))
                     {
-                        model.MaximumHumidity = number;
+                        model.MaximumHeartRate = number;
                     }
 
-                    if (strdict.TryGetValue("minimumhumidity", out str) &&
+                    if (strdict.TryGetValue("minimumheartrate", out str) &&
                        double.TryParse(
                             str,
                             NumberStyles.Float,
                             CultureInfo.InvariantCulture,
                             out number))
                     {
-                        model.MinimumHumidity = number;
+                        model.MinimumHeartRate = number;
                     }
 
                     if (strdict.TryGetValue("timeframeminutes", out str) &&

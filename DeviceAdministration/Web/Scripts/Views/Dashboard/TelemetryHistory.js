@@ -56,10 +56,10 @@
                         type: powerbi.ValueType.fromDescriptor({ dateTime: true })
                     },
                     {
-                        displayName: 'Humidity',
+                        displayName: 'HeartRate',
                         isMeasure: true,
                         format: "0.00",
-                        queryName: 'humidity',
+                        queryName: 'heartrate',
                         type: powerbi.ValueType.fromDescriptor({ numeric: true }),
                     },
                     {
@@ -189,7 +189,7 @@
 
             for (i = 0 ; i < data.length ; ++i) {
                 item = data[i];
-                results.humidities.push(item.humidity);
+                results.humidities.push(item.heartRate);
                 results.temperatures.push(item.temperature);
 
                 dateTime = new Date(item.timestamp);

@@ -93,8 +93,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
             deviceProperties.SerialNumber = "SER" + GetIntBasedOnString(deviceId + "SerialNumber", 10000);
             deviceProperties.FirmwareVersion = "1." + GetIntBasedOnString(deviceId + "FirmwareVersion", 100);
             deviceProperties.Platform = "Plat-" + GetIntBasedOnString(deviceId + "Platform", 100);
-            deviceProperties.Processor = "i3-" + GetIntBasedOnString(deviceId + "Processor", 10000);
-            deviceProperties.InstalledRAM = GetIntBasedOnString(deviceId + "InstalledRAM", 100) + " MB";
+            //deviceProperties.Processor = "i3-" + GetIntBasedOnString(deviceId + "Processor", 10000);
+            //deviceProperties.InstalledRAM = GetIntBasedOnString(deviceId + "InstalledRAM", 100) + " MB";
+            deviceProperties.PassengerNumber = GetIntBasedOnString(deviceId + "PassengerNumber", 1000000) ;
 
             // Choose a location between the 3 above and set Lat and Long for device properties
             int chosenLocation = GetIntBasedOnString(deviceId + "Location", _possibleDeviceLocations.Count);

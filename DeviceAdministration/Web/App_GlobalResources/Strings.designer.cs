@@ -278,11 +278,11 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Average of device humidity.
+        ///   Looks up a localized string similar to Average of device heartrate.
         /// </summary>
-        public static string AverageOfDeviceHumidity {
+        public static string AverageOfDeviceHeartRate {
             get {
-                return ResourceManager.GetString("AverageOfDeviceHumidity", resourceCulture);
+                return ResourceManager.GetString("AverageOfDeviceHeartRate", resourceCulture);
             }
         }
         
@@ -1547,6 +1547,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HeartRate.
+        /// </summary>
+        public static string HeartRate {
+            get {
+                return ResourceManager.GetString("HeartRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IOT HUB HOSTNAME.
         /// </summary>
         public static string Hostname {
@@ -1561,15 +1570,6 @@ namespace GlobalResources {
         public static string HostnameLength {
             get {
                 return ResourceManager.GetString("HostnameLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Humidity.
-        /// </summary>
-        public static string Humidity {
-            get {
-                return ResourceManager.GetString("Humidity", resourceCulture);
             }
         }
         
@@ -1808,11 +1808,11 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max of device humidity.
+        ///   Looks up a localized string similar to Max of device heartrate.
         /// </summary>
-        public static string MaxOfDevicesHumidity {
+        public static string MaxOfDevicesHeartRate {
             get {
-                return ResourceManager.GetString("MaxOfDevicesHumidity", resourceCulture);
+                return ResourceManager.GetString("MaxOfDevicesHeartRate", resourceCulture);
             }
         }
         
@@ -1835,7 +1835,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Azure IoT Suite by JD.
+        ///   Looks up a localized string similar to Internet of Passengers by JD.
         /// </summary>
         public static string MicrosoftAzureIoTSuite {
             get {
@@ -1844,11 +1844,11 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min of device humidity.
+        ///   Looks up a localized string similar to Min of device heartrate.
         /// </summary>
-        public static string MinOfDevicesHumidity {
+        public static string MinOfDevicesHeartRate {
             get {
-                return ResourceManager.GetString("MinOfDevicesHumidity", resourceCulture);
+                return ResourceManager.GetString("MinOfDevicesHeartRate", resourceCulture);
             }
         }
         
